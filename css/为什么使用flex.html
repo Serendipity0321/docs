@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            border: 0;
+        }
+
+        .wrap {
+            width: 300px;
+            height: 300px;
+            border: 1px solid red;
+            position: relative;
+            background-color: rgb(48, 209, 23);
+
+        }
+
+        .box {
+            height: 100px;
+            width: 100px;
+            border: 1px solid blue;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate3d(-50%, -50%, 0);
+            background-color: pink;
+        }
+
+        .q {
+            float: right;
+            height: 100px;
+            background-color: rgb(48, 209, 23);
+            width: 100px;
+        }
+
+        /* 方法一 */
+        /* .qq {
+            height: 100px;
+            background-color: rgb(73, 14, 202);
+            margin-right: 100px;
+        } */
+        /* 方法二 */
+
+        .qq {
+            height: 100px;
+            background-color: rgb(73, 14, 202);
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">awsfqEFTRQWEFTQ3EW
+        <div class="box">dfgadfgedASDCsfedaerfserfgvrfsdgb hnyrshw5rt6y245teatrbhn 3q4f</div>
+
+    </div>
+    <!-- 两栏布局 右侧浮动 左侧设置margin-right为右侧的宽度 -->
+    <div class="q"></div>
+    <div class="qq"></div>
+</body>
+
+</html>

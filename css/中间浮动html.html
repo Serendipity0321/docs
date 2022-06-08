@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自适应布局</title>
+    <style>
+        body,
+        div {
+            margin: 0%;
+            padding: 0%;
+        }
+
+        .all {
+            width: 100%;
+        }
+
+        .first {
+            background-color: #1B8BB8;
+            float: left;
+            position: absolute;
+            left: 0px;
+            width: 150px;
+            height: 100px;
+        }
+
+        .second {
+            background-color: pink;
+            float: left;
+            position: absolute;
+            left: 150px;
+            width: 80%;
+            height: 100px;
+        }
+
+        .third {
+            background-color: #DCEBF1;
+            float: right;
+            width: 150px;
+            position: absolute;
+            right: 0px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="all">
+        <div class="first">
+            <p>第一个元素中的内容</p>
+        </div>
+        <div class="second">
+            <p>第二个元素中的内容</p>
+        </div>
+        <div class="third">
+            <p>第三个元素中的内容</p>
+        </div>
+    </div>
+</body>
+
+</html>

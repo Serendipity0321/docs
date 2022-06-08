@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            background-color: pink;
+            width: 200px;
+            height: 400px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h3>防抖与节流</h3>
+    <input placeholder="输入电话" />
+
+    <div class="box"></div>
+    <script>
+        //防抖  将多次操作变成一次
+
+        // let telIn = document.querySelector("input");
+        // telIn.addEventListener("input", (e) => {
+        //     console.log('发起请求');
+        // })
+
+        // let telIn = document.querySelector("input");
+        // telIn.addEventListener("input", shake(demo, 2000))
+
+        // //将防抖与节流包装成一个方法
+
+        // function shake(fn, wait) {
+        //     let timeOut = null;
+        //     return args => {
+        //         if (timeOut) clearTimeout(timeOut)
+        //         timeOut = setTimeout(fn, wait);
+        //     }
+
+        // }
+        // function demo() {
+        //     console.log('发起请求');
+        // }
+
+        //节流  保证一定时间内调用一次函数  
+        //应用场景：提交表单  
+        // let box = document.querySelector(".box")
+        // box.addEventListener("touchmove", (e) => {
+        //     console.log("节流");
+        // })
+        // 节流函数
+        // fn 是需要执行的函数
+        // wait 是时间间隔
+        const throttle = (fn, wait = 1000) => {
+            // 上一次执行 fn 的时间
+            let timeOut = 0
+            // 将 throttle 处理结果当作函数返回
+            return function (...args) {
+                // 获取当前时间，转换成时间戳，单位毫秒
+                let time = +new Date()
+                // 将当前时间和上一次执行函数的时间进行对比
+                // 大于等待时间就把 timeOut设置为当前时间并执行函数 fn
+                if (time - timeOut > wait) {
+                    timeOut = time
+                    fn.apply(this, args)
+                }
+            }
+        }
+
+        // 执行 throttle 函数返回新函数
+        const betterFn = throttle(() => console.log('fn 函数执行了'), 1000)
+        // 每 10 毫秒执行一次 betterFn 函数，但是只有时间差大于 1000 时才会执行 fn
+        setInterval(betterFn, 10)
+
+    </script>
+</body>
+
+</html>

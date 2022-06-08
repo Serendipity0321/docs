@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p:nth-child(1) {
+            margin-bottom: 13px;
+            background-color: rgb(162, 69, 69);
+        }
+
+        p:nth-child(2) {
+            margin-top: 87px;
+            margin-bottom: 13px;
+            background-color: pink;
+        }
+
+        .center {
+            margin: auto;
+            background: lime;
+            width: 100%;
+        }
+
+        .outside {
+            width: 100%;
+
+            margin: 50px 100px;
+            background: cyan;
+            display: flex;
+        }
+
+
+        section {
+            height: 200px;
+        }
+
+        .box {
+            background-color: rgb(224, 206, 247);
+            border: 5px solid rebeccapurple;
+        }
+
+        .box[style] {
+            background-color: aliceblue;
+            border: 5px solid steelblue;
+        }
+
+        .float {
+            float: left;
+            width: 200px;
+            height: 100px;
+            background-color: rgba(255, 255, 255, .5);
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
+
+    <p>下边界范围会...</p>
+    <p>...会跟这个元素的上边界范围重叠。</p>
+    <div class="center">此元素会被居中。</div>
+    <div class="outside">此元素会显示在包含块之外。</div>
+
+
+    <section>
+        <div class="box">
+            <div class="float">1111111111111111111</div>
+            <p>2222222222222222222222222</p>
+        </div>
+    </section>
+    <section>
+        <div class="box" style="overflow:auto">
+            <div class="float">I am a floated box!</div>
+            <p>I am content inside the <code>overflow:auto</code> container.</p>
+        </div>
+    </section>
+    <section>
+        <div class="box" style="display:flow-root">
+            <div class="float">I am a floated box!</div>
+            <p>I am content inside the <code>display:flow-root</code> container.</p>
+        </div>
+    </section>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
